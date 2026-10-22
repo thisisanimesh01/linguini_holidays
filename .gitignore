@@ -62,5 +62,6 @@ build/
 tmp/
 temp/
 
-# images folder
+# Ignore the images folder
 images/
+
