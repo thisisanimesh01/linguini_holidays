@@ -37,7 +37,6 @@ function renderTours(tours) {
       <!-- Trip Poster / Photo Space -->
       <div class="card-img-wrap">
         <span class="card-badge">${tour.badge}</span>
-        <span class="card-code">${tour.code}</span>
         <img src="${tour.image}" alt="${tour.name}" loading="lazy" onerror="this.onerror=null; this.src='images/IMG_1690.PNG';">
         <div class="card-duration-badge">
           <i class="fa-regular fa-clock"></i> ${tour.duration}
@@ -45,11 +44,8 @@ function renderTours(tours) {
       </div>
 
       <div class="card-body">
-        <div class="card-rating-row">
-          <span class="stars"><i class="fa-solid fa-star"></i></span>
-          <span class="rating-num">${tour.rating}</span>
-          <span class="rating-count">(${tour.reviewsCount} reviews)</span>
-          <span style="margin-left: auto; font-size: 0.72rem; color: var(--primary-indigo); font-weight: 700; background: var(--indigo-tint); padding: 2px 8px; border-radius: 4px;">${tour.destination}</span>
+        <div class="card-destination-row" style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+          <span style="font-size: 0.75rem; color: var(--primary-indigo); font-weight: 700; background: var(--indigo-tint); padding: 3px 10px; border-radius: 4px; border: 1px solid var(--border-indigo);">${tour.destination}</span>
         </div>
         <h3 class="card-title" title="${tour.name}">${tour.name}</h3>
         <div class="route-stops">
@@ -161,7 +157,7 @@ function openItineraryModal(tourId) {
   const body = document.getElementById('modal-body-content');
 
   title.textContent = tour.name;
-  badge.textContent = `${tour.code} • ${tour.duration}`;
+  badge.textContent = `${tour.duration}`;
 
   let itineraryHtml = tour.itinerary.map(item => `
     <div class="itinerary-day-box">
