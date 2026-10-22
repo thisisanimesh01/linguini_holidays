@@ -1,2 +1,66 @@
-# Ignore Mac system files
+# ============================================
+# Private, Sensitive & Confidential Documents
+# ============================================
+info/
+*.pdf
+*.PDF
+all_itineraries_ocr.txt
+extracted_itineraries.json
+extracted_assets/
+assets/
+
+# Private Credentials, Keys & Secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.cert
+credentials.json
+client_secrets.json
+
+# Local Configuration & Database
+config.local.*
+*.local
+*.sqlite
+*.sqlite3
+*.db
+
+# ============================================
+# OS & Editor Specific Files
+# ============================================
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDEs & Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# ============================================
+# Logs, Cache & Temporary Artifacts
+# ============================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.cache/
+node_modules/
+dist/
+build/
+tmp/
+temp/
+
+# images folder
+images/

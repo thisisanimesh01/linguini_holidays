@@ -34,14 +34,11 @@ function renderTours(tours) {
     const card = document.createElement('div');
     card.className = 'tour-card';
     card.innerHTML = `
-      <!-- Blank Photo Space for Trip on the Front Page -->
-      <div class="card-img-wrap blank-photo-space">
+      <!-- Trip Poster / Photo Space -->
+      <div class="card-img-wrap">
         <span class="card-badge">${tour.badge}</span>
         <span class="card-code">${tour.code}</span>
-        <div class="photo-blank-placeholder">
-          <i class="fa-regular fa-image"></i>
-          <span>${tour.destination}</span>
-        </div>
+        <img src="${tour.image}" alt="${tour.name}" loading="lazy" onerror="this.onerror=null; this.src='images/IMG_1690.PNG';">
         <div class="card-duration-badge">
           <i class="fa-regular fa-clock"></i> ${tour.duration}
         </div>
