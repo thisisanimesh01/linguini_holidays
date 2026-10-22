@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linguini Holidays - Handcrafted Himachal & Mountain Expeditions</title>
+  <meta name="description" content="Discover expertly curated mountain and heritage journeys across Spiti Valley, Bir Billing, Jibhi, Jalori Pass, Tirthan Valley, Parvati Valley & Udaipur with Linguini Holidays.">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <!-- Main Navigation Header with logo.png -->
+  <header class="main-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo-container">
+          <img src="logo.png" alt="Linguini Holidays Logo" class="brand-logo-img">
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#destinations" class="active">Destinations</a></li>
+          <li><a href="#featured-tours">All Packages</a></li>
+          <li><a href="#why-linguini">Why Us</a></li>
+          <li><a href="#bank-details">Payment & Trust</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="phone-cta">
+            <span>Talk to Trip Expert</span>
+            <strong>96677 14524</strong>
+          </div>
+          <button class="btn-primary" onclick="openCallbackModal()">
+            <i class="fa-solid fa-paper-plane"></i> Plan My Trip
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Search Widget -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <i class="fa-solid fa-award"></i> Handcrafted Experiential Mountain Journeys
+        </div>
+        <h2>Your Tour, <span>Perfectaly Curated!</span></h2>
+        <p>Explore verified mountain circuits and weekend getaways across Spiti Valley, Bir Billing, Jibhi, Tirthan, and Udaipur.</p>
+
+        <!-- Search & Filter Card -->
+        <div class="search-widget">
+          <div class="search-input-group">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="field-data">
+              <label>Destination / Valley</label>
+              <select id="filter-destination" onchange="applyFilters()">
+                <option value="all">All Destinations (Linguini Exclusive)</option>
+                <option value="Spiti Valley">Spiti Valley (Kaza, Tabo, Chitkul)</option>
+                <option value="Bir Billing">Bir Billing & Rajgundha</option>
+                <option value="Jibhi & Tirthan">Jibhi, Jalori Pass & Tirthan</option>
+                <option value="Offbeat Himachal">Offbeat Himachal (Shoja, Tosh, Dharamkot)</option>
+                <option value="Himachal Pradesh">Manali & Kasol</option>
+                <option value="Dharamshala">Dharamshala & Triund Trek</option>
+                <option value="Udaipur & Mount Abu">Udaipur & Mount Abu</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="search-input-group">
+            <i class="fa-regular fa-calendar-days"></i>
+            <div class="field-data">
+              <label>Duration / Style</label>
+              <select id="filter-category" onchange="applyFilters()">
+                <option value="all">All Tour Styles</option>
+                <option value="Weekend Getaways">Weekend Getaways (2N/3D)</option>
+                <option value="Signature Expeditions">Long Expeditions (6N to 9N)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="search-input-group">
+            <i class="fa-solid fa-arrow-down-wide-short"></i>
+            <div class="field-data">
+              <label>Sort By</label>
+              <select id="filter-sort" onchange="applyFilters()">
+                <option value="popular">Most Popular</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="duration">Trip Duration</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn-primary" style="padding: 14px 28px;" onclick="scrollToTours()">
+            <i class="fa-solid fa-magnifying-glass"></i> Explore
+          </button>
+        </div>
+
+        <!-- Quick Filter Tags -->
+        <div class="quick-tags" id="quick-tags-container">
+          <button class="tag-btn active" data-filter="all" onclick="filterByTag('all', this)">
+            <i class="fa-solid fa-globe"></i> All Trips (8)
+          </button>
+          <button class="tag-btn" data-filter="Spiti Valley" onclick="filterByTag('Spiti Valley', this)">
+            <i class="fa-solid fa-snowflake"></i> Spiti Valley
+          </button>
+          <button class="tag-btn" data-filter="Bir Billing" onclick="filterByTag('Bir Billing', this)">
+            <i class="fa-solid fa-wind"></i> Bir Billing
+          </button>
+          <button class="tag-btn" data-filter="Jibhi & Tirthan" onclick="filterByTag('Jibhi & Tirthan', this)">
+            <i class="fa-solid fa-water"></i> Jibhi & Tirthan
+          </button>
+          <button class="tag-btn" data-filter="Offbeat Himachal" onclick="filterByTag('Offbeat Himachal', this)">
+            <i class="fa-solid fa-campground"></i> Offbeat Trails
+          </button>
+          <button class="tag-btn" data-filter="Udaipur & Mount Abu" onclick="filterByTag('Udaipur & Mount Abu', this)">
+            <i class="fa-solid fa-landmark"></i> Udaipur & Mt Abu
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Featured Destinations Section (Locations Exclusive to Linguini Itineraries) -->
+  <section class="locations-section" id="destinations">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div>
+          <span class="section-badge">Verified Circuits</span>
+          <h2 class="section-title">Explore by Destination</h2>
+          <p class="section-subtitle">Exclusively operating in the destinations detailed in Linguini Holidays official itineraries.</p>
+        </div>
+        <button class="btn-outline" onclick="filterByTag('all', null)">View All Packages</button>
+      </div>
+
+      <div class="destinations-grid">
+        <!-- Spiti Valley -->
+        <div class="dest-card" onclick="filterByTag('Spiti Valley', null)">
+          <i class="fa-solid fa-mountain-sun dest-card-icon"></i>
+          <h4>Spiti Valley</h4>
+          <span>Key, Kaza, Tabo, Chitkul, Kalpa • 3 Packages</span>
+        </div>
+        <!-- Bir Billing -->
+        <div class="dest-card" onclick="filterByTag('Bir Billing', null)">
+          <i class="fa-solid fa-wind dest-card-icon"></i>
+          <h4>Bir Billing & Rajgundha</h4>
+          <span>Paragliding, Uhl River, Monasteries • 1 Package</span>
+        </div>
+        <!-- Jibhi & Jalori -->
+        <div class="dest-card" onclick="filterByTag('Jibhi & Tirthan', null)">
+          <i class="fa-solid fa-water dest-card-icon"></i>
+          <h4>Jibhi & Tirthan Valley</h4>
+          <span>Jalori Pass, Serolsar Lake, Waterfalls • 1 Package</span>
+        </div>
+        <!-- Udaipur & Mt Abu -->
+        <div class="dest-card" onclick="filterByTag('Udaipur & Mount Abu', null)">
+          <i class="fa-solid fa-landmark-dome dest-card-icon"></i>
+          <h4>Udaipur & Mount Abu</h4>
+          <span>Lake Pichola, City Palace, Dilwara • 1 Package</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Tour Packages Grid with BLANK PHOTO SPACES -->
+  <section class="tours-section" id="featured-tours">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div>
+          <span class="section-badge">Curated Itineraries</span>
+          <h2 class="section-title" id="tours-heading">Linguini Holiday Packages</h2>
+          <p class="section-subtitle">Transparent pricing, double/triple room sharing options, and end-to-end Delhi pickup & drop.</p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <span id="package-count-badge" style="font-size: 0.9rem; font-weight: 700; color: var(--primary-indigo); background: var(--indigo-tint); padding: 6px 14px; border-radius: var(--radius-full); border: 1px solid var(--border-indigo);">Showing 8 Tours</span>
+        </div>
+      </div>
+
+      <!-- Tours Card Container dynamically populated by app.js with blank photo spaces -->
+      <div class="tours-grid" id="tours-container"></div>
+    </div>
+  </section>
+
+  <!-- Why Travel With Linguini -->
+  <section class="features-section" id="why-linguini">
+    <div class="container">
+      <div class="section-title-wrap centered">
+        <div>
+          <span class="section-badge">The Linguini Promise</span>
+          <h2 class="section-title">Human Support, Not Ticket Numbers</h2>
+          <p class="section-subtitle">Real on-ground teams supporting you before, during, and after your trip.</p>
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feat-icon"><i class="fa-solid fa-person-hiking"></i></div>
+          <h3>Dedicated Trip Captains</h3>
+          <p>Every group departure is accompanied by a certified, experienced Trip Captain to coordinate stays, road safety, high-altitude protocols, and local interactions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon"><i class="fa-solid fa-bus-simple"></i></div>
+          <h3>Direct Delhi-to-Delhi Transfers</h3>
+          <p>Comfortable AC Pushback Tempo Travellers & AC Semi-Sleeper Volvo buses with pickup from Kashmiri Gate / IFFCO Chowk for seamless journeys.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon"><i class="fa-solid fa-hotel"></i></div>
+          <h3>Handpicked Stays & Hot Meals</h3>
+          <p>Verified 3-star standard hotels, authentic riverside wooden cottages in Jibhi, and cozy homestays in Spiti with included hygienic breakfasts & dinners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Official Bank Transfer Details -->
+  <section class="trust-strip" id="bank-details" style="background: var(--bg-ivory); padding: 50px 0;">
+    <div class="container">
+      <div class="bank-transfer-box">
+        <h4><i class="fa-solid fa-shield-check"></i> Official Booking & Company Account Details</h4>
+        <p style="font-size: 0.88rem; color: #dfdcf0; margin-bottom: 16px;">
+          To ensure verified and secure payments, all bookings are directly processed via Linguini Holidays Private Limited company bank account.
+        </p>
+        <div class="bank-grid">
+          <div>
+            <strong>Beneficiary Name</strong>
+            <span>LINGUINI HOLIDAYS PRIVATE LIMITED</span>
+          </div>
+          <div>
+            <strong>Bank Name</strong>
+            <span>HDFC BANK</span>
+          </div>
+          <div>
+            <strong>Account Number</strong>
+            <span>5020 0107 7597 44</span>
+          </div>
+          <div>
+            <strong>IFSC Code</strong>
+            <span>HDFC0001552</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Linguini Holidays</h3>
+          <p>
+            India's handcrafted mountain and heritage travel company. Curating memorable weekend escapes and deep Himalayan expeditions with personalized care and real human coordination.
+          </p>
+          <div style="display: flex; gap: 14px; font-size: 1.2rem; color: #c3bfe0;">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Himachal Destinations</h5>
+          <ul class="footer-links">
+            <li><a href="#" onclick="filterByTag('Spiti Valley', null)">Spiti Valley Circuit</a></li>
+            <li><a href="#" onclick="filterByTag('Bir Billing', null)">Bir Billing & Rajgundha</a></li>
+            <li><a href="#" onclick="filterByTag('Jibhi & Tirthan', null)">Jibhi & Jalori Pass</a></li>
+            <li><a href="#" onclick="filterByTag('Offbeat Himachal', null)">Offbeat Tosh & Shoja</a></li>
+            <li><a href="#" onclick="filterByTag('Himachal Pradesh', null)">Manali & Kasol</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Heritage & Treks</h5>
+          <ul class="footer-links">
+            <li><a href="#" onclick="filterByTag('Udaipur & Mount Abu', null)">Udaipur & Mount Abu</a></li>
+            <li><a href="#" onclick="filterByTag('Dharamshala', null)">Triund Ridge Trek</a></li>
+            <li><a href="#" onclick="filterByTag('Spiti Valley', null)">Sangla Holi Edition</a></li>
+            <li><a href="#" onclick="filterByTag('Spiti Valley', null)">New Year Kasol Party</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact & Support</h5>
+          <ul class="footer-links">
+            <li><a href="tel:+919667714524"><i class="fa-solid fa-phone"></i> +91 96677 14524</a></li>
+            <li><a href="mailto:bookings@linguiniholidays.com"><i class="fa-solid fa-envelope"></i> bookings@linguiniholidays.com</a></li>
+            <li><a href="#bank-details"><i class="fa-solid fa-building-columns"></i> Bank Account Info</a></li>
+            <li><a href="javascript:void(0)" onclick="openCancellationModal()"><i class="fa-solid fa-file-contract"></i> Cancellation Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          Copyright © 2026 Linguini Holidays Private Limited. All Rights Reserved.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="javascript:void(0)" onclick="openCancellationModal()">Refund Policy</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Detail Itinerary Modal -->
+  <div class="modal-backdrop" id="itinerary-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="card-badge" id="modal-badge" style="position: static; margin-bottom: 4px; display: inline-block;">TOUR</span>
+          <h3 id="modal-title">Tour Itinerary</h3>
+        </div>
+        <button class="close-modal" onclick="closeModal('itinerary-modal')">&times;</button>
+      </div>
+      <div class="modal-content-body" id="modal-body-content">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Request Callback / Booking Modal -->
+  <div class="modal-backdrop" id="callback-modal">
+    <div class="modal-box" style="max-width: 600px;">
+      <div class="modal-header">
+        <div>
+          <span class="card-badge" style="position: static; margin-bottom: 4px; display: inline-block;">INSTANT RESPONSE</span>
+          <h3>Request a Callback</h3>
+        </div>
+        <button class="close-modal" onclick="closeModal('callback-modal')">&times;</button>
+      </div>
+      <div class="modal-content-body">
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px;">
+          Share your details below. Our tour expert will connect with you via call/WhatsApp within 15 minutes with customized batch dates & pricing.
+        </p>
+
+        <form id="booking-callback-form" onsubmit="handleCallbackSubmit(event)">
+          <div class="booking-form">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" id="cb-name" placeholder="e.g. Rahul Sharma" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="cb-phone" placeholder="e.g. 98765 43210" required>
+            </div>
+            <div class="form-group full-width">
+              <label>Select Tour Package *</label>
+              <select id="cb-tour" required>
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Number of Travelers</label>
+              <select id="cb-travelers">
+                <option value="1">1 Traveler (Solo)</option>
+                <option value="2" selected>2 Travelers (Couple/Friends)</option>
+                <option value="3-5">3 - 5 Travelers (Small Group)</option>
+                <option value="6+">6+ Travelers (Group Batch)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Sharing Preference</label>
+              <select id="cb-sharing">
+                <option value="double">Double Sharing (+₹2,000)</option>
+                <option value="triple" selected>Triple Sharing (Standard)</option>
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label>Any Specific Dates or Message</label>
+              <textarea id="cb-notes" rows="2" placeholder="e.g. Looking for upcoming long weekend batch..."></textarea>
+            </div>
+          </div>
+
+          <div style="margin-top: 20px; display: flex; justify-content: flex-end; gap: 12px;">
+            <button type="button" class="btn-outline" onclick="closeModal('callback-modal')">Cancel</button>
+            <button type="submit" class="btn-primary" style="padding: 12px 28px;">
+              <i class="fa-solid fa-paper-plane"></i> Submit Request
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cancellation Policy Modal -->
+  <div class="modal-backdrop" id="policy-modal">
+    <div class="modal-box" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3>Linguini Holidays Cancellation & Refund Policy</h3>
+        <button class="close-modal" onclick="closeModal('policy-modal')">&times;</button>
+      </div>
+      <div class="modal-content-body" style="line-height: 1.7; font-size: 0.95rem;">
+        <p><strong>Official Terms as per Linguini Holidays PDF Itineraries:</strong></p>
+        <ul style="padding-left: 20px; margin: 12px 0;">
+          <li>Cancellations must be submitted in writing via email or the official booking platform.</li>
+          <li><strong>Booking Amount (Initial Deposit):</strong> Non-refundable under all circumstances.</li>
+          <li><strong>30+ Days before departure:</strong> 20% cancellation fee.</li>
+          <li><strong>15 - 29 Days before departure:</strong> 50% cancellation fee.</li>
+          <li><strong>7 - 14 Days before departure:</strong> 75% cancellation fee.</li>
+          <li><strong>Less than 7 Days before departure:</strong> 100% cancellation fee (No refund).</li>
+          <li>No refunds shall be made towards any inclusion(s) not availed by the client during the tour.</li>
+        </ul>
+        <div style="text-align: right; margin-top: 20px;">
+          <button class="btn-primary" onclick="closeModal('policy-modal')">I Understand</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="tours_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
