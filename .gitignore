@@ -74,6 +74,3 @@ temp/
 *.RAF
 *.raf
 
-# Ignore the images folder
-images/
-
