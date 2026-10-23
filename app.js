@@ -91,6 +91,15 @@ function applyFilters() {
   const catVal = document.getElementById('filter-category').value;
   const sortVal = document.getElementById('filter-sort').value;
 
+  // Sync quick tag button if destination dropdown was changed directly
+  document.querySelectorAll('.tag-btn').forEach(btn => {
+    if (btn.getAttribute('data-filter') === destVal) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
   let filtered = toursData.filter(tour => {
     const matchDest = (destVal === 'all') || (tour.destination.toLowerCase() === destVal.toLowerCase());
     const matchCat = (catVal === 'all') || (tour.category.toLowerCase() === catVal.toLowerCase());

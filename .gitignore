@@ -62,6 +62,15 @@ build/
 tmp/
 temp/
 
-# Ignore the images folder
-images/
+# RAW Camera Files (large, not web-usable)
+*.ARW
+*.arw
+*.DNG
+*.dng
+*.CR2
+*.cr2
+*.NEF
+*.nef
+*.RAF
+*.raf
 
