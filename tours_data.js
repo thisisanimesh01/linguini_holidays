@@ -176,7 +176,7 @@ const toursData = [
     originalPrice: 11499,
     discountedPrice: 8499,
     discount: "SAVE ₹3,000",
-    image: "images/IMG_1694.PNG",
+    image: "images/jibhi.jpg",
     pickupDrop: "Delhi to Delhi (Kashmiri Gate)",
     stay: "Traditional Wooden Cottage / 3-Star Hotel in Jibhi (2N)",
     meals: "4 Meals (2 Breakfasts + 2 Dinners)",
