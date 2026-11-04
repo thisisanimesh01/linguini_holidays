@@ -106,7 +106,7 @@ const toursData = [
     originalPrice: 11999,
     discountedPrice: 8499,
     discount: "SAVE ₹3,500",
-    image: "images/bir_billing.JPG",
+    image: "images/Bir_Billing.jpg",
     pickupDrop: "Delhi to Delhi (Kashmiri Gate Metro)",
     stay: "Bir Hotel (1N) + Rajgundha Camps/Cottages (1N)",
     meals: "4 Meals (2 Breakfasts + 2 Dinners)",
