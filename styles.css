@@ -506,6 +506,20 @@ img {
 }
 
 /* =========================================
+   Scroll Reveal Animation
+   ========================================= */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
    Hero Section
    ========================================= */
 .hero {
@@ -703,65 +717,6 @@ img {
 }
 
 /* =========================================
-   Destinations Section
-   ========================================= */
-.locations-section {
-  padding: 60px 0;
-  background: var(--bg-ivory);
-}
-.destinations-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.dest-card {
-  position: relative;
-  height: 200px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  cursor: pointer;
-  background: white;
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 22px;
-  -webkit-tap-highlight-color: transparent;
-}
-.dest-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: var(--primary-indigo);
-}
-.dest-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary-indigo);
-  box-shadow: var(--shadow-hover);
-}
-.dest-card-icon {
-  font-size: 2.2rem;
-  color: var(--primary-indigo);
-  margin-bottom: auto;
-  opacity: 0.85;
-}
-.dest-card h4 {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  margin-bottom: 4px;
-}
-.dest-card span {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-
-/* =========================================
    Tour Packages Grid & Cards
    ========================================= */
 .tours-section {
@@ -846,10 +801,28 @@ img {
   flex: 1;
 }
 
-.card-destination-row {
+.card-meta-top {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 8px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.card-rating i {
+  color: var(--gold-star);
+  font-size: 0.82rem;
+}
+.card-rating small {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.76rem;
 }
 .card-dest-tag {
   font-size: 0.74rem;
@@ -1137,6 +1110,33 @@ img {
   font-size: 0.94rem;
 }
 
+/* Modal Highlights Grid */
+.modal-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.highlight-chip {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg-ivory);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  line-height: 1.45;
+}
+.highlight-chip i {
+  color: var(--coral-accent);
+  margin-top: 3px;
+  font-size: 0.82rem;
+  flex-shrink: 0;
+}
+
 /* Itinerary Modal Meta Strip */
 .itinerary-meta-strip {
   display: grid;
@@ -1369,6 +1369,41 @@ img {
   font-size: 0.82rem;
 }
 
+/* =========================================
+   Back to Top Floating Button
+   ========================================= */
+.scroll-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-indigo);
+  color: white;
+  box-shadow: 0 4px 16px rgba(60, 56, 132, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  z-index: 890;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.scroll-to-top:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(60, 56, 132, 0.45);
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN BREAKPOINTS: LAPTOP, TABLET & MOBILE PHONE ORIENTED
    ========================================================================== */
@@ -1438,12 +1473,6 @@ img {
     padding: 14px 24px;
     font-size: 1rem;
     justify-content: center;
-  }
-
-  /* Destinations Grid: 2 Columns on Tablet */
-  .destinations-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
   }
 
   /* Tours Grid: 2 Columns on Tablet */
@@ -1535,6 +1564,14 @@ img {
     gap: 8px;
   }
 
+  /* Scroll to top button offset for mobile bottom bar */
+  .scroll-to-top {
+    bottom: 74px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+  }
+
   /* Hero on Mobile */
   .hero {
     padding: 38px 0 46px 0;
@@ -1611,24 +1648,6 @@ img {
   }
   .section-subtitle {
     font-size: 0.9rem;
-  }
-
-  /* Destinations Grid on Mobile */
-  .destinations-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-  .dest-card {
-    height: auto;
-    min-height: 140px;
-    padding: 18px;
-  }
-  .dest-card-icon {
-    font-size: 1.7rem;
-    margin-bottom: 14px;
-  }
-  .dest-card h4 {
-    font-size: 1.15rem;
   }
 
   /* Tours Grid on Mobile */
@@ -1742,6 +1761,9 @@ img {
     justify-content: center;
     padding: 8px 10px;
     font-size: 0.78rem;
+  }
+  .modal-highlights-grid {
+    grid-template-columns: 1fr;
   }
   .itinerary-meta-strip {
     grid-template-columns: 1fr;

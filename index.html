@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Linguini Holidays - Handcrafted Himachal & Mountain Expeditions</title>
   <meta name="description" content="Discover expertly curated mountain and heritage journeys across Spiti Valley, Bir Billing, Jibhi, Jalori Pass, Tirthan Valley, Parvati Valley & Udaipur with Linguini Holidays.">
+  <meta name="keywords" content="Spiti Valley tour, Bir Billing trip, Jibhi Tirthan package, Himachal holidays, mountain expeditions India, Linguini Holidays, weekend getaways from Delhi">
+  <meta name="author" content="Linguini Holidays Private Limited">
+  <meta name="theme-color" content="#3C3884">
+
+  <!-- Open Graph / Social Share -->
+  <meta property="og:title" content="Linguini Holidays — Handcrafted Mountain Expeditions">
+  <meta property="og:description" content="Curated Himalayan journeys across Spiti Valley, Bir Billing, Jibhi & more. Delhi pickup. Transparent pricing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://linguiniholidays.com">
+  <meta property="og:image" content="https://linguiniholidays.com/images/spiti.JPG">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,8 +37,7 @@
         </a>
 
         <ul class="nav-links">
-          <li><a href="#destinations" class="active">Destinations</a></li>
-          <li><a href="#featured-tours">All Packages</a></li>
+          <li><a href="#featured-tours" class="active">All Packages</a></li>
           <li><a href="#why-linguini">Why Us</a></li>
           <li><a href="#bank-details">Payment & Trust</a></li>
         </ul>
@@ -63,7 +72,6 @@
     </div>
     <div class="mobile-drawer-body">
       <ul class="mobile-nav-links">
-        <li><a href="#destinations" onclick="closeMobileMenu()"><i class="fa-solid fa-mountain-sun"></i> Destinations</a></li>
         <li><a href="#featured-tours" onclick="closeMobileMenu()"><i class="fa-solid fa-compass"></i> All Packages</a></li>
         <li><a href="#why-linguini" onclick="closeMobileMenu()"><i class="fa-solid fa-award"></i> Why Linguini</a></li>
         <li><a href="#bank-details" onclick="closeMobileMenu()"><i class="fa-solid fa-shield-halved"></i> Payment & Trust</a></li>
@@ -174,46 +182,6 @@
   </section>
 
 
-  <!-- Featured Destinations Section (Locations Exclusive to Linguini Itineraries) -->
-  <section class="locations-section" id="destinations">
-    <div class="container">
-      <div class="section-title-wrap">
-        <div>
-          <span class="section-badge">Verified Circuits</span>
-          <h2 class="section-title">Explore by Destination</h2>
-          <p class="section-subtitle">Exclusively operating in the destinations detailed in Linguini Holidays official itineraries.</p>
-        </div>
-        <button class="btn-outline" onclick="filterByTag('all', null)">View All Packages</button>
-      </div>
-
-      <div class="destinations-grid">
-        <!-- Spiti Valley -->
-        <div class="dest-card" onclick="filterByTag('Spiti Valley', null)">
-          <i class="fa-solid fa-mountain-sun dest-card-icon"></i>
-          <h4>Spiti Valley</h4>
-          <span>Key, Kaza, Tabo, Chitkul, Kalpa • 3 Packages</span>
-        </div>
-        <!-- Bir Billing -->
-        <div class="dest-card" onclick="filterByTag('Bir Billing', null)">
-          <i class="fa-solid fa-wind dest-card-icon"></i>
-          <h4>Bir Billing & Rajgundha</h4>
-          <span>Paragliding, Uhl River, Monasteries • 1 Package</span>
-        </div>
-        <!-- Jibhi & Jalori -->
-        <div class="dest-card" onclick="filterByTag('Jibhi & Tirthan', null)">
-          <i class="fa-solid fa-water dest-card-icon"></i>
-          <h4>Jibhi & Tirthan Valley</h4>
-          <span>Jalori Pass, Serolsar Lake, Waterfalls • 1 Package</span>
-        </div>
-        <!-- Udaipur & Mt Abu -->
-        <div class="dest-card" onclick="filterByTag('Udaipur & Mount Abu', null)">
-          <i class="fa-solid fa-landmark-dome dest-card-icon"></i>
-          <h4>Udaipur & Mount Abu</h4>
-          <span>Lake Pichola, City Palace, Dilwara • 1 Package</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- All Tour Packages Grid with BLANK PHOTO SPACES -->
   <section class="tours-section" id="featured-tours">
@@ -246,20 +214,35 @@
       </div>
 
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card" data-animate>
           <div class="feat-icon"><i class="fa-solid fa-person-hiking"></i></div>
           <h3>Dedicated Trip Captains</h3>
           <p>Every group departure is accompanied by a certified, experienced Trip Captain to coordinate stays, road safety, high-altitude protocols, and local interactions.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" data-animate>
           <div class="feat-icon"><i class="fa-solid fa-bus-simple"></i></div>
           <h3>Direct Delhi-to-Delhi Transfers</h3>
           <p>Comfortable AC Pushback Tempo Travellers & AC Semi-Sleeper Volvo buses with pickup from Kashmiri Gate / IFFCO Chowk for seamless journeys.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" data-animate>
           <div class="feat-icon"><i class="fa-solid fa-hotel"></i></div>
           <h3>Handpicked Stays & Hot Meals</h3>
           <p>Verified 3-star standard hotels, authentic riverside wooden cottages in Jibhi, and cozy homestays in Spiti with included hygienic breakfasts & dinners.</p>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+          <h3>Transparent Pricing</h3>
+          <p>No hidden costs, no surprise extras. What you see is what you pay — GST clearly stated, sharing basis options upfront, and no last-minute add-ons.</p>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Secure Company Payments</h3>
+          <p>All payments go directly to the HDFC company account of Linguini Holidays Private Limited — fully traceable, no personal accounts, no middlemen.</p>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feat-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <h3>Small Batches, Big Experiences</h3>
+          <p>Curated group sizes of 15–20 travelers ensure personal attention, deeper connections, and authentic interactions at every destination.</p>
         </div>
       </div>
     </div>
@@ -304,12 +287,6 @@
           <p>
             India's handcrafted mountain and heritage travel company. Curating memorable weekend escapes and deep Himalayan expeditions with personalized care and real human coordination.
           </p>
-          <div style="display: flex; gap: 14px; font-size: 1.2rem; color: #c3bfe0;">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
         </div>
 
         <div class="footer-col">
@@ -462,6 +439,11 @@
       </div>
     </div>
   </div>
+
+  <!-- Back to Top Floating Button -->
+  <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top" onclick="scrollToTop()">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <!-- Mobile Floating Sticky Bottom Quick Actions Bar -->
   <div class="mobile-bottom-bar" id="mobile-bottom-bar">

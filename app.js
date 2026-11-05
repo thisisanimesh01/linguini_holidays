@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   renderTours(toursData);
   populateCallbackToursSelect();
+  setupScrollAnimations();
 });
 
 function renderTours(tours) {
@@ -33,6 +34,7 @@ function renderTours(tours) {
 
     const card = document.createElement('div');
     card.className = 'tour-card';
+    card.setAttribute('data-animate', '');
     card.innerHTML = `
       <!-- Trip Poster / Photo Space -->
       <div class="card-img-wrap">
@@ -44,7 +46,12 @@ function renderTours(tours) {
       </div>
 
       <div class="card-body">
-        <div class="card-destination-row">
+        <div class="card-meta-top">
+          <div class="card-rating">
+            <i class="fa-solid fa-star"></i>
+            <span>${tour.rating ? tour.rating.toFixed(1) : '4.9'}</span>
+            <small>(${tour.reviewsCount || 100})</small>
+          </div>
           <span class="card-dest-tag">${tour.destination}</span>
         </div>
         <h3 class="card-title" title="${tour.name}">${tour.name}</h3>
@@ -70,6 +77,7 @@ function renderTours(tours) {
     `;
     container.appendChild(card);
   });
+  setupScrollAnimations();
 }
 
 // Populate tour select box in callback modal
@@ -201,6 +209,13 @@ function openItineraryModal(tourId) {
     </li>
   `).join('');
 
+  let highlightsHtml = (tour.highlights && tour.highlights.length) ? `
+    <h4 class="modal-subheading">Key Highlights</h4>
+    <div class="modal-highlights-grid">
+      ${tour.highlights.map(h => `<div class="highlight-chip"><i class="fa-solid fa-sparkles"></i><span>${h}</span></div>`).join('')}
+    </div>
+  ` : '';
+
   body.innerHTML = `
     <div class="itinerary-meta-strip">
       <div class="meta-item">
@@ -223,6 +238,8 @@ function openItineraryModal(tourId) {
 
     <h4 class="modal-subheading">Trip Overview</h4>
     <p class="modal-overview-text">${tour.overview}</p>
+
+    ${highlightsHtml}
 
     <h4 class="modal-subheading">Day-Wise Detailed Itinerary</h4>
     <div class="itinerary-days-container">
@@ -360,3 +377,37 @@ window.addEventListener('click', (e) => {
     }
   }
 });
+
+// Scroll to Top Handler
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scroll-to-top');
+  if (btn) {
+    if (window.scrollY > 350) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }
+});
+
+// Scroll Reveal Observer
+function setupScrollAnimations() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('[data-animate]').forEach(el => el.classList.add('in-view'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('[data-animate]:not(.in-view)').forEach(el => observer.observe(el));
+}
