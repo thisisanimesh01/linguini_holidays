@@ -162,8 +162,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 82px;
-  padding: 8px 0;
+  min-height: 96px;
+  padding: 10px 0;
 }
 
 .logo-container {
@@ -173,9 +173,9 @@ img {
 }
 
 .brand-logo-img {
-  height: 72px;
+  height: 88px;
   width: auto;
-  max-width: 200px;
+  max-width: 240px;
   object-fit: contain;
   border-radius: var(--radius-sm);
   background: var(--bg-ivory);
@@ -337,7 +337,7 @@ img {
   background: var(--bg-ivory);
 }
 .mobile-drawer-logo {
-  height: 48px;
+  height: 58px;
   width: auto;
 }
 .mobile-drawer-close {
@@ -1396,11 +1396,11 @@ img {
 
   /* Header on Tablets */
   .navbar {
-    min-height: 74px;
+    min-height: 84px;
   }
   .brand-logo-img {
-    height: 62px;
-    max-width: 180px;
+    height: 74px;
+    max-width: 200px;
   }
   .nav-links {
     gap: 18px;
@@ -1506,12 +1506,12 @@ img {
 
   /* Header & Navigation on Mobile */
   .navbar {
-    min-height: 60px;
+    min-height: 68px;
     padding: 6px 0;
   }
   .brand-logo-img {
-    height: 48px;
-    max-width: 145px;
+    height: 56px;
+    max-width: 175px;
   }
   .nav-links,
   .btn-primary.desktop-cta,
