@@ -44,8 +44,8 @@ function renderTours(tours) {
       </div>
 
       <div class="card-body">
-        <div class="card-destination-row" style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
-          <span style="font-size: 0.75rem; color: var(--primary-indigo); font-weight: 700; background: var(--indigo-tint); padding: 3px 10px; border-radius: 4px; border: 1px solid var(--border-indigo);">${tour.destination}</span>
+        <div class="card-destination-row">
+          <span class="card-dest-tag">${tour.destination}</span>
         </div>
         <h3 class="card-title" title="${tour.name}">${tour.name}</h3>
         <div class="route-stops">
@@ -57,11 +57,11 @@ function renderTours(tours) {
             <span class="current-price">₹${tour.discountedPrice.toLocaleString('en-IN')} <small>/Adult</small></span>
             <span class="save-amount">${tour.discount}</span>
           </div>
-          <div style="display: flex; gap: 6px;">
-            <button class="btn-outline" style="padding: 6px 12px; font-size: 0.8rem;" onclick="openItineraryModal('${tour.id}')">
+          <div class="card-actions">
+            <button class="btn-outline btn-card-action" onclick="openItineraryModal('${tour.id}')">
               View Itinerary
             </button>
-            <button class="card-btn" onclick="openCallbackModal('${tour.name}')">
+            <button class="card-btn btn-card-action" onclick="openCallbackModal('${tour.name}')">
               Book
             </button>
           </div>
@@ -188,69 +188,73 @@ function openItineraryModal(tourId) {
   `).join('');
 
   let exclusionsHtml = tour.exclusions.map(exc => `
-    <li style="margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-      <i class="fa-solid fa-xmark" style="color: #ef4444; margin-top: 4px;"></i>
+    <li class="inc-exc-item">
+      <i class="fa-solid fa-xmark text-danger"></i>
       <span>${exc}</span>
     </li>
   `).join('');
 
+  let inclusionsHtmlFinal = tour.inclusions.map(inc => `
+    <li class="inc-exc-item">
+      <i class="fa-solid fa-check text-success"></i>
+      <span>${inc}</span>
+    </li>
+  `).join('');
+
   body.innerHTML = `
-    <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 24px; background: var(--bg-ivory); padding: 18px; border-radius: 12px; border: 1px solid var(--border-light);">
-      <div>
-        <strong style="color: var(--primary-indigo); font-size: 0.8rem; text-transform: uppercase;">Duration</strong>
-        <p style="font-weight: 700; color: var(--text-dark);">${tour.duration}</p>
+    <div class="itinerary-meta-strip">
+      <div class="meta-item">
+        <strong class="meta-label">Duration</strong>
+        <p class="meta-val">${tour.duration}</p>
       </div>
-      <div>
-        <strong style="color: var(--primary-indigo); font-size: 0.8rem; text-transform: uppercase;">Pickup & Drop</strong>
-        <p style="font-weight: 700; color: var(--text-dark);">${tour.pickupDrop}</p>
+      <div class="meta-item">
+        <strong class="meta-label">Pickup & Drop</strong>
+        <p class="meta-val">${tour.pickupDrop}</p>
       </div>
-      <div>
-        <strong style="color: var(--primary-indigo); font-size: 0.8rem; text-transform: uppercase;">Meals Included</strong>
-        <p style="font-weight: 700; color: var(--text-dark);">${tour.meals}</p>
+      <div class="meta-item">
+        <strong class="meta-label">Meals Included</strong>
+        <p class="meta-val">${tour.meals}</p>
       </div>
-      <div style="margin-left: auto; text-align: right;">
-        <span style="font-size: 0.85rem; text-decoration: line-through; color: var(--text-muted);">₹${tour.originalPrice.toLocaleString('en-IN')}</span>
-        <h3 style="color: var(--primary-indigo); font-size: 1.6rem; font-weight: 800;">₹${tour.discountedPrice.toLocaleString('en-IN')} <small style="font-size: 0.75rem; color: var(--text-muted);">+5% GST</small></h3>
+      <div class="meta-item meta-price-block">
+        <span class="meta-old-price">₹${tour.originalPrice.toLocaleString('en-IN')}</span>
+        <h3 class="meta-price-val">₹${tour.discountedPrice.toLocaleString('en-IN')} <small>+5% GST</small></h3>
       </div>
     </div>
 
-    <h4 style="margin-bottom: 10px; color: var(--text-dark);">Trip Overview</h4>
-    <p style="color: var(--text-body); line-height: 1.6; margin-bottom: 24px;">${tour.overview}</p>
+    <h4 class="modal-subheading">Trip Overview</h4>
+    <p class="modal-overview-text">${tour.overview}</p>
 
-    <h4 style="margin-bottom: 12px; color: var(--text-dark);">Day-Wise Detailed Itinerary</h4>
-    <div style="margin-bottom: 28px;">
+    <h4 class="modal-subheading">Day-Wise Detailed Itinerary</h4>
+    <div class="itinerary-days-container">
       ${itineraryHtml}
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
-      <div style="background: white; padding: 18px; border-radius: 12px; border: 1px solid var(--border-light);">
-        <h4 style="color: var(--text-dark); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-circle-check" style="color: #10b981;"></i> What's Included
-        </h4>
-        <ul style="list-style: none; font-size: 0.88rem; color: var(--text-body);">
-          ${inclusionsHtml}
+    <div class="inclusions-exclusions-grid">
+      <div class="inc-exc-box">
+        <h4 class="inc-exc-title"><i class="fa-solid fa-circle-check text-success"></i> What's Included</h4>
+        <ul class="inc-exc-list">
+          ${inclusionsHtmlFinal}
         </ul>
       </div>
 
-      <div style="background: white; padding: 18px; border-radius: 12px; border: 1px solid var(--border-light);">
-        <h4 style="color: var(--text-dark); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-circle-xmark" style="color: #ef4444;"></i> What's Not Included
-        </h4>
-        <ul style="list-style: none; font-size: 0.88rem; color: var(--text-body);">
+      <div class="inc-exc-box">
+        <h4 class="inc-exc-title"><i class="fa-solid fa-circle-xmark text-danger"></i> What's Not Included</h4>
+        <ul class="inc-exc-list">
           ${exclusionsHtml}
         </ul>
       </div>
     </div>
 
-    <div style="text-align: right; border-top: 1px solid var(--border-light); padding-top: 18px; display: flex; justify-content: flex-end; gap: 12px;">
-      <button class="btn-outline" onclick="closeModal('itinerary-modal')">Close</button>
-      <button class="btn-primary" onclick="closeModal('itinerary-modal'); openCallbackModal('${tour.name}');">
+    <div class="modal-footer-actions">
+      <button class="btn-outline modal-btn" onclick="closeModal('itinerary-modal')">Close</button>
+      <button class="btn-primary modal-btn" onclick="closeModal('itinerary-modal'); openCallbackModal('${tour.name}');">
         <i class="fa-solid fa-phone"></i> Request Callback for This Trip
       </button>
     </div>
   `;
 
   modal.classList.add('active');
+  document.body.classList.add('modal-open');
 }
 
 // Callback Modal
@@ -261,16 +265,77 @@ function openCallbackModal(preselectedTour) {
     if (select) select.value = preselectedTour;
   }
   modal.classList.add('active');
+  document.body.classList.add('modal-open');
 }
 
 function openCancellationModal() {
-  document.getElementById('policy-modal').classList.add('active');
+  const modal = document.getElementById('policy-modal');
+  if (modal) modal.classList.add('active');
+  document.body.classList.add('modal-open');
 }
 
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   if (modal) modal.classList.remove('active');
+  
+  // Only remove modal-open class if no other modal is currently active
+  const openModals = document.querySelectorAll('.modal-backdrop.active');
+  if (openModals.length === 0 && !document.getElementById('mobile-drawer')?.classList.contains('active')) {
+    document.body.classList.remove('modal-open');
+  }
 }
+
+// Mobile Menu Navigation Handlers
+function toggleMobileMenu() {
+  const drawer = document.getElementById('mobile-drawer');
+  const overlay = document.getElementById('mobile-drawer-overlay');
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  
+  if (!drawer || !overlay) return;
+  const isOpen = drawer.classList.contains('active');
+  
+  if (isOpen) {
+    closeMobileMenu();
+  } else {
+    drawer.classList.add('active');
+    overlay.classList.add('active');
+    if (toggleBtn) toggleBtn.classList.add('active');
+    document.body.classList.add('modal-open');
+  }
+}
+
+function closeMobileMenu() {
+  const drawer = document.getElementById('mobile-drawer');
+  const overlay = document.getElementById('mobile-drawer-overlay');
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  
+  if (drawer) drawer.classList.remove('active');
+  if (overlay) overlay.classList.remove('active');
+  if (toggleBtn) toggleBtn.classList.remove('active');
+  
+  const openModals = document.querySelectorAll('.modal-backdrop.active');
+  if (openModals.length === 0) {
+    document.body.classList.remove('modal-open');
+  }
+}
+
+// Close drawer automatically if window is resized past mobile breakpoint (e.g. tablet/laptop)
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 900) {
+    closeMobileMenu();
+  }
+});
+
+// Close modals or drawer with Escape key
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeMobileMenu();
+    document.querySelectorAll('.modal-backdrop.active').forEach(m => {
+      m.classList.remove('active');
+    });
+    document.body.classList.remove('modal-open');
+  }
+});
 
 // Handle Callback Form Submit
 function handleCallbackSubmit(event) {
@@ -289,5 +354,9 @@ function handleCallbackSubmit(event) {
 window.addEventListener('click', (e) => {
   if (e.target.classList.contains('modal-backdrop')) {
     e.target.classList.remove('active');
+    const openModals = document.querySelectorAll('.modal-backdrop.active');
+    if (openModals.length === 0) {
+      document.body.classList.remove('modal-open');
+    }
   }
 });

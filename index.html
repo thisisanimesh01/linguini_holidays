@@ -22,7 +22,7 @@
   <header class="main-header">
     <div class="container">
       <nav class="navbar">
-        <a href="index.html" class="logo-container">
+        <a href="index.html" class="logo-container" aria-label="Linguini Holidays Home">
           <img src="images/logo.PNG" alt="Linguini Holidays Logo" class="brand-logo-img">
         </a>
 
@@ -34,17 +34,60 @@
         </ul>
 
         <div class="nav-actions">
-          <div class="phone-cta">
+          <a href="tel:+919667714524" class="phone-cta" title="Call Linguini Trip Specialist">
             <span>Talk to Trip Expert</span>
             <strong>96677 14524</strong>
-          </div>
-          <button class="btn-primary" onclick="openCallbackModal()">
+          </a>
+          <a href="tel:+919667714524" class="mobile-call-icon" aria-label="Call Trip Expert" title="Call +91 96677 14524">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+          <button class="btn-primary desktop-cta" onclick="openCallbackModal()">
             <i class="fa-solid fa-paper-plane"></i> Plan My Trip
+          </button>
+          <button class="hamburger-btn" id="mobile-menu-toggle" aria-label="Open navigation menu" onclick="toggleMobileMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
           </button>
         </div>
       </nav>
     </div>
   </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay" onclick="closeMobileMenu()"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <img src="images/logo.PNG" alt="Linguini Holidays Logo" class="mobile-drawer-logo">
+      <button class="mobile-drawer-close" onclick="closeMobileMenu()" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-links">
+        <li><a href="#destinations" onclick="closeMobileMenu()"><i class="fa-solid fa-mountain-sun"></i> Destinations</a></li>
+        <li><a href="#featured-tours" onclick="closeMobileMenu()"><i class="fa-solid fa-compass"></i> All Packages</a></li>
+        <li><a href="#why-linguini" onclick="closeMobileMenu()"><i class="fa-solid fa-award"></i> Why Linguini</a></li>
+        <li><a href="#bank-details" onclick="closeMobileMenu()"><i class="fa-solid fa-shield-halved"></i> Payment & Trust</a></li>
+      </ul>
+
+      <div class="mobile-drawer-contact">
+        <span class="drawer-contact-label">Speak With Our Specialist</span>
+        <a href="tel:+919667714524" class="drawer-call-btn">
+          <i class="fa-solid fa-phone-volume"></i>
+          <div>
+            <small>Call Direct (24/7)</small>
+            <strong>+91 96677 14524</strong>
+          </div>
+        </a>
+        <a href="https://wa.me/919667714524?text=Hi%20Linguini%20Holidays%2C%20I%20would%20like%20to%20inquire%20about%20a%20tour%20package." target="_blank" rel="noopener" class="drawer-whatsapp-btn">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+      </div>
+
+      <button class="btn-primary drawer-plan-btn" onclick="closeMobileMenu(); openCallbackModal();">
+        <i class="fa-solid fa-paper-plane"></i> Plan My Custom Trip
+      </button>
+    </div>
+  </aside>
 
   <!-- Hero Section with Search Widget -->
   <section class="hero">
@@ -100,7 +143,7 @@
             </div>
           </div>
 
-          <button class="btn-primary" style="padding: 14px 28px;" onclick="scrollToTours()">
+          <button class="btn-primary search-submit-btn" onclick="scrollToTours()">
             <i class="fa-solid fa-magnifying-glass"></i> Explore
           </button>
         </div>
@@ -417,6 +460,22 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Mobile Floating Sticky Bottom Quick Actions Bar -->
+  <div class="mobile-bottom-bar" id="mobile-bottom-bar">
+    <a href="tel:+919667714524" class="bottom-bar-btn call" aria-label="Call Expert">
+      <i class="fa-solid fa-phone"></i>
+      <span>Call</span>
+    </a>
+    <a href="https://wa.me/919667714524?text=Hi%20Linguini%20Holidays%2C%20I%20am%20interested%20in%20inquiring%20about%20a%20tour%20package." target="_blank" rel="noopener" class="bottom-bar-btn whatsapp" aria-label="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>WhatsApp</span>
+    </a>
+    <button class="bottom-bar-btn cta" onclick="openCallbackModal()" aria-label="Plan My Trip">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Plan Trip</span>
+    </button>
   </div>
 
   <!-- Scripts -->
