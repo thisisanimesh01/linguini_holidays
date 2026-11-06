@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTours(toursData);
   populateCallbackToursSelect();
   setupScrollAnimations();
+  initHeaderScroll();
 });
 
 function renderTours(tours) {
@@ -377,6 +378,23 @@ window.addEventListener('click', (e) => {
     }
   }
 });
+
+// Glassmorphism Header Scroll Detection
+function initHeaderScroll() {
+  const header = document.querySelector('.main-header');
+  if (!header) return;
+
+  const onScroll = () => {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
 
 // Scroll to Top Handler
 function scrollToTop() {

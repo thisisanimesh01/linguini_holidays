@@ -146,7 +146,7 @@ img {
 }
 
 /* =========================================
-   Main Navigation Header
+   Main Navigation Header (with Glassmorphism)
    ========================================= */
 .main-header {
   background: var(--bg-ivory);
@@ -155,7 +155,29 @@ img {
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 10px rgba(60, 56, 132, 0.04);
-  transition: var(--transition);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  background-clip: padding-box;
+  transform: translateZ(0);
+  isolation: isolate;
+  transition: background 300ms ease,
+              backdrop-filter 300ms ease,
+              -webkit-backdrop-filter 300ms ease,
+              box-shadow 300ms ease,
+              border-color 300ms ease;
+}
+
+.main-header.scrolled {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.70) 0%,
+    rgba(242, 239, 232, 0.58) 100%
+  );
+  backdrop-filter: blur(5px) saturate(145%);
+  -webkit-backdrop-filter: blur(5px) saturate(145%);
+  border-bottom: 1px solid rgba(215, 210, 198, 0.9);
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.85),
+              0 6px 20px rgba(60, 56, 132, 0.06);
 }
 
 .navbar {
@@ -178,7 +200,7 @@ img {
   max-width: 240px;
   object-fit: contain;
   border-radius: var(--radius-sm);
-  background: var(--bg-ivory);
+  background: transparent;
   transition: transform 0.2s ease;
 }
 .brand-logo-img:hover {
