@@ -50,7 +50,7 @@
           <a href="tel:+919667714524" class="mobile-call-icon" aria-label="Call Trip Expert" title="Call +91 96677 14524">
             <i class="fa-solid fa-phone"></i>
           </a>
-          <button class="btn-primary desktop-cta" onclick="openCallbackModal()">
+          <button class="btn-primary desktop-cta" onclick="handlePlanTripClick(event)">
             <i class="fa-solid fa-paper-plane"></i> Plan My Trip
           </button>
           <button class="hamburger-btn" id="mobile-menu-toggle" aria-label="Open navigation menu" onclick="toggleMobileMenu()">
@@ -91,7 +91,7 @@
         </a>
       </div>
 
-      <button class="btn-primary drawer-plan-btn" onclick="closeMobileMenu(); openCallbackModal();">
+      <button class="btn-primary drawer-plan-btn" onclick="closeMobileMenu(); handlePlanTripClick(event);">
         <i class="fa-solid fa-paper-plane"></i> Plan My Custom Trip
       </button>
     </div>
@@ -455,7 +455,7 @@
       <i class="fa-brands fa-whatsapp"></i>
       <span>WhatsApp</span>
     </a>
-    <button class="bottom-bar-btn cta" onclick="openCallbackModal()" aria-label="Plan My Trip">
+    <button class="bottom-bar-btn cta" onclick="handlePlanTripClick(event)" aria-label="Plan My Trip">
       <i class="fa-solid fa-paper-plane"></i>
       <span>Plan Trip</span>
     </button>
