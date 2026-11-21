@@ -7,89 +7,88 @@ const toursData = [
     destination: "Spiti Valley",
     category: "Himachal & Spiti",
     tag: "Trending Winter Expedition",
-    badge: "FESTIVE SALE!",
-    duration: "7 Nights / 8 Days",
+    badge: "LIMITED PERIOD OFFER",
+    duration: "6 Nights / 7 Days",
     rating: 4.9,
     reviewsCount: 142,
-    originalPrice: 22999,
-    discountedPrice: 17999,
-    discount: "SAVE ₹5,000",
-    image: "images/IMG_1690.PNG",
-    pickupDrop: "Delhi to Delhi (ISBT Kashmiri Gate)",
-    stay: "Sarahan (1N), Sangla (1N), Nako (1N), Kaza (2N), Kalpa (1N)",
+    originalPrice: 28999,
+    discountedPrice: 24999,
+    discount: "SAVE ₹4,000",
+    image: "images/spiti.jpg",
+    pickupDrop: "Delhi to Delhi (ISBT KASHMERE GATE)",
+    stay: "Narkanda (1N), Sangla/Rakcham (1N), Nako (1N), Kaza/Rangrik (2N), Kalpa (1N)",
     meals: "12 Meals (6 Breakfasts + 6 Dinners)",
     transport: "AC Semi-Sleeper Volvo (Delhi-Shimla) + Dedicated Tempo Traveller / SUV in Spiti",
-    overview: "Embark on an unforgettable winter journey across the high-altitude desert of Spiti Valley. Marvel at snow-laden ancient monasteries, visit the world's highest post office at Hikkim, explore Chitkul (the last Indian village), and experience frozen waterfalls and dramatic Kinnaur landscapes.",
+    overview: "Embark on an unforgettable winter expedition through the high-altitude desert of Spiti Valley. Witness snow-covered Himalayan landscapes, explore ancient monasteries, visit the world's highest post office at Hikkim, discover the remote village of Chitkul near the Indo-Tibetan border, and experience frozen waterfalls and the breathtaking landscapes of Kinnaur.",
     highlights: [
-      "Visit Chitkul, the last inhabited village on Indo-Tibetan border",
-      "Ancient Tabo Monastery (Ajanta of the Himalayas, 1000+ yrs old)",
-      "Iconic Key Monastery perched at 13,668 ft overlooking Spiti river",
-      "Komic (highest village connected by motorable road) & Hikkim (world's highest post office)",
-      "Gue Monastery housing the famous 500-year-old preserved monk mummy",
-      "Dramatic view of the sacred Kinner Kailash peak from Kalpa"
+      "Chitkul – Explore the last inhabited village of the picturesque Baspa Valley, near the Indo-Tibetan border",
+      "Frozen Nako Lake – Experience the winter charm of Nako's beautiful frozen lake, surrounded by snow-covered Himalayan landscapes",
+      "Ancient Tabo Monastery – Discover the 1,000+ year-old monastery, famously known as the \"Ajanta of the Himalayas\"",
+      "Dhankar Monastery – Visit the spectacular cliffside monastery overlooking the confluence of the Spiti and Pin Rivers",
+      "Gue Village – Witness the naturally preserved, approximately 500-year-old monk mummy",
+      "Key Monastery – Explore the iconic 1,000-year-old monastery overlooking the breathtaking Spiti Valley",
+      "Komic, Hikkim & Langza – Discover some of Spiti's highest villages, visit the world's highest post office and explore the famous Fossil Village with its giant Buddha statue",
+      "Chicham Bridge & Kalpa – Experience the spectacular Himalayan landscapes and enjoy breathtaking views of the sacred Kinner Kailash Range"
     ],
     itinerary: [
       {
         day: "Day 0",
         title: "Departure from Delhi",
-        desc: "Assemble at ISBT Kashmiri Gate Metro Station at 10:00 PM. Board comfortable AC Semi-Sleeper Volvo bus for an overnight journey to Shimla."
+        desc: "Overnight journey to Shimla by AC semi sleeper volvo bus."
       },
       {
         day: "Day 1",
-        title: "Shimla to Sarahan via Narkanda & Rampur",
-        desc: "Reach Shimla by 8:00 AM. Meet your trip captain and board your Tempo Traveller. Scenic drive through apple orchards and Sutlej valley. Visit historical Bhimakali Temple in Sarahan. Dinner and overnight stay."
+        title: "Shimla – Narkanda",
+        desc: "Reach Shimla in the morning and meet your driver. Begin your scenic journey towards Narkanda. Breakfast stop at Kufri (Suggested: Sher-e-Punjab, Charabra). Reach Narkanda. Check in and freshen up & relax. Evening stroll near the market area or nearby locally. Dinner and overnight stay in Narkanda. (Overnight stay: Narkanda)"
       },
       {
         day: "Day 2",
-        title: "Sarahan to Sangla via Chitkul",
-        desc: "Drive through the picturesque Baspa Valley. Explore Chitkul, the last Indian village along the border. Riverside walk by Baspa River. Check in at Sangla homestay/hotel."
+        title: "Narkanda – Chitkul",
+        desc: "After breakfast, start your journey towards Chitkul — the last inhabited village near the Indo-Tibet border. En route halts at Kinnaur Gate and Karcham Dam for photos and short breaks. Lunch suggestions: Zostel Chitkul or Saryu’s Restaurant (Sangla). Reach chitkul. Visit the famous Hindustan ka Akhiri Dhaba, have tea and maggie. Chill near the Baspa river and return to your stay. Reach stay. Check in and relax. Dinner and overnight stay in Sangla/Rakcham. (Overnight stay: Sangla/Rakcham)"
       },
       {
         day: "Day 3",
-        title: "Sangla to Nako via Khab Confluence",
-        desc: "Witness the confluence of Spiti and Sutlej rivers at Khab. Climb up to the hamlet of Nako. Visit ancient Nako Monastery and holy Nako Lake reflecting snowy peaks."
+        title: "Nako",
+        desc: "Wake up to the beautiful kinnaur valley and have breakfast. Proceed towards Nako with a halt at the beautiful Khab Sangam (confluence of Spiti & Sutlej rivers). Reach Nako by evening. Explore Nako Monastery and Nako Lake. Hotel check-in, dinner, and overnight stay in Nako. (Overnight stay: Nako)"
       },
       {
         day: "Day 4",
-        title: "Nako to Kaza via Gue Mummy, Tabo & Dhankar",
-        desc: "Visit the 550-year-old self-mummified monk at Gue. Explore the UNESCO tentative Tabo Monastery (996 AD) and cliff-hanging Dhankar Monastery. Arrive in Kaza by evening."
+        title: "Nako – Kaza",
+        desc: "Early breakfast & proceed towards Kaza & Visit: Tabo Monastery (Ajanta of Himalayas), Dhankar Monastery (cliff-top monastery), and halt at Lingti Waterfall. Reach Kaza by evening. Check-in and relax. Dinner & overnight stay in Kaza. (Overnight stay: Kaza/Rangrik)"
       },
       {
         day: "Day 5",
-        title: "Kaza High-Altitude Circuit (Key, Kibber, Hikkim, Komic, Langza)",
-        desc: "Full day sightseeing: Key Monastery, Chicham Bridge (Asia's highest suspension bridge), send postcards from Hikkim post office, visit Buddha statue at Langza."
+        title: "Kaza Local Sightseeing",
+        desc: "Have Breakfast & full-day excursion: Hikkim – World’s highest post office; Komic – One of the highest motorable villages and Highest Restaurant; Langza – Fossil village with giant Buddha statue; Key Monastery – Iconic Spiti landmark; Chicham Bridge – Asia’s highest Suspension bridge. Return to Kaza by evening and explore kaza local market. Dinner & overnight stay in Kaza. (Overnight stay: Kaza/Rangrik)"
       },
       {
         day: "Day 6",
-        title: "Kaza to Kalpa via Recong Peo",
-        desc: "Drive back along the dramatic Hindustan-Tibet road to Kalpa. Enjoy unobstructed golden sunset over the sacred Kinnaur Kailash peaks. Stroll Roghi village and Suicide Point."
+        title: "Kaza – Kalpa",
+        desc: "Have breakfast and start your journey towards Kalpa. En route, cover any sightseeing points that may have been missed earlier, subject to time and route feasibility. Drive to Kalpa taking an optional halt at Recong peo market. Visit the local monastery and Narayan nagini temple if time permits. Witness mesmerizing views of Kinner Kailash Range. Check-in & relax. Dinner & overnight stay in Kalpa. (Overnight stay: Kalpa)"
       },
       {
         day: "Day 7",
-        title: "Kalpa to Shimla & Volvo to Delhi",
-        desc: "Early breakfast and scenic drive down to Shimla. Board overnight AC Volvo bus back to Delhi with unforgettable memories."
+        title: "Kalpa – Shimla & Departure",
+        desc: "Breakfast & check-out from Kalpa. Start the scenic drive towards Shimla through the beautiful Kinnaur landscapes. En-route, take short halts for refreshments, photographs and to enjoy the mountain views. Reach Shimla in the evening. Evening departure for Delhi by volvo bus."
       },
       {
         day: "Day 8",
         title: "Arrival in Delhi",
-        desc: "Arrive at Delhi early morning (around 7:00 AM). Tour concludes."
+        desc: "Arrive in Delhi early in the Morning. The trip concludes."
       }
     ],
     inclusions: [
+      "06 Nights Accommodation in Hotels / Homestays",
+      "All Applicable Tolls, Parking Charges and Driver Allowances",
       "AC Semi-Sleeper Volvo bus tickets Delhi - Shimla - Delhi",
-      "Tempo Traveller / SUV for entire internal sightseeing & transfers",
-      "06 Nights accommodation in handpicked 3-star standard hotels/homestays",
-      "12 Meals: 6 Breakfasts + 6 Dinners as stated in itinerary",
-      "Experienced Trip Captain & Tour Coordinator throughout",
-      "First Aid Medical Kit & Oxygen support assistance",
-      "Driver allowances, toll taxes, state permits, and fuel charges"
+      "Dedicated Tempo Traveller / SUV for internal transfers and sightseeing",
+      "Hygienic Breakfasts and Dinners as per itinerary"
     ],
     exclusions: [
-      "5% GST extra applicable",
-      "Lunches & beverages during transit",
-      "Monastery entry tickets, camera permits, room heaters",
-      "Expenses caused by landslides, snow roadblocks or natural hazards",
-      "Personal expenses (shopping, laundry, tips)"
+      "Entry Tickets, Monastery Fees, Camera Charges and Room Heaters",
+      "Expenses Arising Due to Landslides, Snow Roadblocks, Adverse Weather or Other Unforeseen Circumstances",
+      "Any Services or Expenses Not Specifically Mentioned Under Inclusions",
+      "5% GST extra applicable"
     ]
   },
   {
@@ -507,54 +506,97 @@ const toursData = [
     ]
   },
   {
-    id: "spiti-sangla-holi",
+    id: "spiti-summer-road-trip",
     code: "SP03",
-    name: "Spiti Valley & Chandrataal Summer Edition",
+    name: "Spiti Summer Road Trip (Chandratal Edition)",
     destination: "Spiti Valley",
     category: "Signature Expeditions",
     tag: "Lake & Mountain Circuit",
     badge: "SUMMER SPECIAL",
-    duration: "7 Nights / 8 Days",
+    duration: "06 Nights 07 Days",
     rating: 4.9,
     reviewsCount: 62,
     originalPrice: 22999,
     discountedPrice: 17999,
     discount: "SAVE ₹5,000",
-    image: "images/spiti.JPG",
-    pickupDrop: "Delhi to Delhi (ISBT Kashmiri Gate)",
-    stay: "Sangla (2N), Kalpa (1N), Kaza (2N), Nako (1N)",
-    meals: "12 Meals (6 Breakfasts + 6 Dinners)",
-    transport: "Dedicated Expedition Vehicle / Tempo Traveller",
-    overview: "Celebrate the vibrant colors of Faguli (traditional tribal Holi of Kinnaur) amidst towering snow peaks in Sangla Valley, followed by a dramatic roadtrip across Spiti Valley. Experience authentic local folklore, masked dances, and raw Himalayan hospitality.",
+    image: "images/spiti_summer.JPG",
+    pickupDrop: "ISBT Kashmere Gate Bus stand",
+    stay: "Sangla (1N), Kalpa (1N), Nako (1N), Kaza (2N), Chandratal Camps (1N)",
+    meals: "12 Meals: 6 Breakfasts + 6 Dinners as per Itinerary",
+    transport: "AC Semi-Sleeper Volvo (Delhi–Shimla & Manali–Delhi) + Tempo Traveller for entire trip",
+    overview: "Embark on an unforgettable summer road trip through the breathtaking landscapes of Spiti Valley. Discover picturesque Himalayan villages, explore ancient monasteries, visit the world's highest post office at Hikkim, witness the stunning beauty of Chandratal Lake, and experience the dramatic mountain landscapes of Kinnaur and Lahaul.",
     highlights: [
-      "Exclusive participation in Sangla Faguli Holi festival celebrations",
-      "Snowcapped vistas of Kinnaur Kailash and Baspa River",
-      "Key Monastery, Tabo Monastery and Dhankar Gompa",
-      "Winter high-altitude villages: Langza, Hikkim & Komic",
-      "Chitkul border village winter walk"
+      "Chitkul – Explore the last inhabited village of the picturesque Baspa Valley, near the Indo-Tibetan border",
+      "Kalpa & Kinner Kailash – Experience breathtaking views of the sacred Kinner Kailash Range surrounded by the beautiful landscapes of Kinnaur",
+      "Nako Lake & Monastery – Discover the peaceful Himalayan village of Nako, its ancient monastery and beautiful high-altitude lake",
+      "Ancient Tabo Monastery – Explore the 1,000+ year-old monastery, famously known as the \"Ajanta of the Himalayas\"",
+      "Dhankar Monastery & Gue Village – Visit the spectacular cliffside monastery and witness the naturally preserved, approximately 500-year-old monk mummy at Gue",
+      "Komic, Hikkim & Langza – Explore some of Spiti's highest villages, visit the world's highest post office and discover the famous Fossil Village with its giant Buddha statue",
+      "Key Monastery & Chicham Bridge – Discover Spiti's iconic Buddhist monastery and experience the spectacular Chicham suspension bridge",
+      "Chandratal Lake & Kunzum La – Witness the mesmerising beauty of the high-altitude Chandratal Lake and drive through the spectacular Kunzum Pass"
     ],
     itinerary: [
-      { day: "Day 0", title: "Delhi to Shimla Overnight Journey", desc: "Overnight Volvo transfer to Shimla." },
-      { day: "Day 1", title: "Shimla to Sangla Valley", desc: "Drive into Kinnaur along Sutlej River. Check in at Sangla." },
-      { day: "Day 2", title: "Sangla Holi Celebration & Chitkul", desc: "Celebrate Faguli tribal Holi with locals, music, and organic colors. Excursion to Chitkul." },
-      { day: "Day 3", title: "Sangla to Kalpa", desc: "Visit Kamru Fort, drive to Kalpa, sunset view of sacred Kinnaur Kailash." },
-      { day: "Day 4", title: "Kalpa to Kaza via Nako & Tabo", desc: "Cross Khab confluence, visit Nako Lake and Tabo monastery. Arrive in Kaza." },
-      { day: "Day 5", title: "Kaza & Key Monastery, Kibber, Chicham", desc: "Explore Key Gompa and highest bridge in Asia at Chicham." },
-      { day: "Day 6", title: "Komic, Hikkim, Langza to Nako", desc: "Visit world's highest post office and motorable village. Drive to Nako." },
-      { day: "Day 7", title: "Nako to Shimla & Volvo to Delhi", desc: "Scenic return journey to Shimla. Evening Volvo to Delhi." },
-      { day: "Day 8", title: "Arrival in Delhi", desc: "Arrive in Delhi early morning." }
+      {
+        day: "Day 0",
+        title: "Departure from Delhi",
+        desc: "Late evening departure from ISBT Kashmiri Gate, Delhi post 10:30 PM. Travel overnight in AC semi-sleeper Volvo bus towards Shimla. Comfortable overnight journey."
+      },
+      {
+        day: "Day 1",
+        title: "Shimla – Sangla",
+        desc: "Reach Shimla early morning & transfer to Tempo Traveller. Begin your scenic drive towards Sangla Valley. Pass through beautiful Himalayan roads & apple orchards. Short halt at Kinnaur Gate for photos. Arrive in Sangla by evening. Check-in to hotel/homestay. Dinner & overnight stay in Sangla."
+      },
+      {
+        day: "Day 2",
+        title: "Sangla – Chitkul – Kalpa",
+        desc: "Breakfast at hotel. Excursion to Chitkul – last inhabited village near Indo-Tibet border. Enjoy riverside views & peaceful Himalayan vibes. Later drive to Kalpa. Witness mesmerizing views of Kinner Kailash Range. Check-in & relax. Dinner & overnight stay in Kalpa. (Meals: Dinner, Breakfast)"
+      },
+      {
+        day: "Day 3",
+        title: "Kalpa – Nako",
+        desc: "Breakfast & departure for Nako. Enroute stop at Khab Sangam (confluence of Sutlej & Spiti rivers). Visit Nako Monastery & Nako Lake. Arrive & check-in at homestay, relax after the journey. Dinner & overnight stay in Nako. (Meals: Dinner, Breakfast)"
+      },
+      {
+        day: "Day 4",
+        title: "Nako – Kaza",
+        desc: "Early breakfast & proceed towards Kaza. Visit: Gue Monastery (famous mummy), Tabo Monastery (Ajanta of Himalayas), Dhankar Monastery (cliff-top monastery), and Lingti Waterfall. Reach Kaza by evening. Check-in to hotel/homestay. Dinner & overnight stay in Kaza. (Meals: Dinner, Breakfast)"
+      },
+      {
+        day: "Day 5",
+        title: "Kaza Local Sightseeing",
+        desc: "Breakfast & full-day excursion: Hikkim – World’s highest post office; Komic – one of the highest motorable villages; Langza – fossil village with giant Buddha statue; Key Monastery – iconic Spiti landmark; Chicham Bridge – Asia’s highest bridge. Return to Kaza by evening. Dinner & overnight stay in Kaza. (Meals: Dinner, Breakfast)"
+      },
+      {
+        day: "Day 6",
+        title: "Kaza – Chandratal",
+        desc: "Early morning departure towards Chandratal Lake. Enroute: Losar Village and Kunzum La Pass. Visit the stunning Chandratal Lake. Check-in to camps. Enjoy stargazing experience. Dinner & overnight stay in camps. (Meals: Dinner)"
+      },
+      {
+        day: "Day 7",
+        title: "Chandratal – Manali & Departure",
+        desc: "Breakfast & depart for Manali. Cross Atal Tunnel / Rohtang region. Reach Manali by approx. 3 PM. Freshen up & explore Mall Road (if time permits). Evening departure for Delhi via AC semi-sleeper Volvo bus. Overnight journey. (Meals: Breakfast)"
+      },
+      {
+        day: "Day 8",
+        title: "Reach Delhi",
+        desc: "Reach Delhi in the morning. Your trip ends here with a suitcase full of memories and friendships of a lifetime."
+      }
     ],
     inclusions: [
-      "Volvo Delhi-Shimla-Delhi + Expedition Tempo Traveller",
-      "06 Nights hotel/homestay accommodation",
-      "12 Meals: 6 Breakfasts + 6 Dinners",
-      "Special organic Holi colors and local tribal festival access",
-      "Trip Leader and first aid kit"
+      "AC Semi-Sleeper Volvo Bus Tickets (Delhi–Shimla & Manali–Delhi)",
+      "Tempo Traveller for the Entire Trip, Including Internal Sightseeing & Transfers",
+      "06 Nights Accommodation in Hotels / Homestays / Camps (Hotels in Sangla & Kalpa, Homestay in Nako, Hotels/Homestays in Kaza, Camps in Chandratal)",
+      "12 Meals: 6 Breakfasts + 6 Dinners as per Itinerary",
+      "All Sightseeing as Mentioned in the Itinerary",
+      "Driver Allowances, Applicable Tolls, Fuel & Parking Charges"
     ],
     exclusions: [
-      "5% GST",
-      "Lunches and personal shopping",
-      "Monastery entrance tickets and room heaters"
+      "5% GST Extra",
+      "Guide / Porter Charges",
+      "Lunches & Personal Expenses",
+      "Entry Tickets, Monastery Fees & Camera Charges",
+      "Expenses Arising Due to Adverse Weather, Road Blockages, Landslides or Other Unforeseen Circumstances",
+      "Any Services or Expenses Not Specifically Mentioned Under Inclusions"
     ]
   }
 ];
