@@ -14,7 +14,7 @@ const toursData = [
     originalPrice: 28999,
     discountedPrice: 24999,
     discount: "SAVE ₹4,000",
-    image: "images/spiti.jpg",
+    image: "images/spiti.jpg?v=2",
     pickupDrop: "Delhi to Delhi (ISBT KASHMERE GATE)",
     stay: "Narkanda (1N), Sangla/Rakcham (1N), Nako (1N), Kaza/Rangrik (2N), Kalpa (1N)",
     meals: "12 Meals (6 Breakfasts + 6 Dinners)",
